@@ -9,9 +9,10 @@ import java.util.*;
 public class Client {
 	Socket requestSocket;           //socket connect to the server
 	ObjectOutputStream out;         //stream write to the socket
- 	ObjectInputStream in;          //stream read from the socket
+	ObjectInputStream in;          //stream read from the socket
 	String message;                //message send to the server
 	String MESSAGE;                //capitalized message read from the server
+	FileOutputStream fr;
 
 	public Client() {}
 
@@ -26,27 +27,30 @@ public class Client {
 			out.flush();
 			in = new ObjectInputStream(requestSocket.getInputStream());
 			
+
 			//get Input from standard input
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+			byte []b=new byte[3000];
+			fr=new FileOutputStream("C:\\Users\\Varun\\eclipse-workspace\\p2p\\src\\p2p\\t.txt");
 			while(true)
 			{
-				System.out.print("Hello, please input a sentence: ");
+				//System.out.print("Hello, please input a sentence: ");
 				//read a sentence from the standard input
-				message = bufferedReader.readLine();
+				//message = bufferedReader.readLine();
 				//Send the sentence to the server
-				sendMessage(message);
+				//sendMessage(message);
 				//Receive the upperCase sentence from the server
-				MESSAGE = (String)in.readObject();
+				in.read(b, 0, b.length);
+				
+				fr.write(b, 0, b.length);
+				message = bufferedReader.readLine();
 				//show the message to the user
-				System.out.println("Receive message: " + MESSAGE);
+				//System.out.println("Receive message: " + MESSAGE);
 			}
 		}
 		catch (ConnectException e) {
-    			System.err.println("Connection refused. You need to initiate a server first.");
+			System.err.println("Connection refused. You need to initiate a server first.");
 		} 
-		catch ( ClassNotFoundException e ) {
-            		System.err.println("Class not found");
-        	} 
 		catch(UnknownHostException unknownHost){
 			System.err.println("You are trying to connect to an unknown host!");
 		}
@@ -56,6 +60,7 @@ public class Client {
 		finally{
 			//Close connections
 			try{
+				fr.close();
 				in.close();
 				out.close();
 				requestSocket.close();
