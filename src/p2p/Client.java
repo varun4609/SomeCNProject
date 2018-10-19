@@ -81,4 +81,90 @@ public class Client {
 		client.run();
 	}
 
+	void sendM() throws IOException {
+		int size = 300;
+		//if (server.getSize()) size = server.getSize(x);
+		byte []b=new byte[size];
+		Socket sr=new Socket("127.0.0.1", 5111);
+		InputStream is=sr.getInputStream();
+		FileOutputStream fr=new FileOutputStream("C:\\Users\\Varun\\eclipse-workspace\\p2p\\src\\p2p\\t.txt");
+		is.read(b,0,b.length);
+		fr.write(b, 0, b.length);
+		fr.close();
+		sr.close();
+	}
+	void sendS() throws IOException {
+		int size = 300;
+		//if (server.getSize()) size = server.getSize(x);
+		byte []b=new byte[size];
+		Socket sr=new Socket("127.0.0.1", 5111);
+		InputStream is=sr.getInputStream();
+		FileOutputStream fr=new FileOutputStream("C:\\Users\\Varun\\eclipse-workspace\\p2p\\src\\p2p\\t.txt");
+		is.read(b,0,b.length);
+		fr.write(b, 0, b.length);
+		fr.close();
+		sr.close();
+	}
+	void sendN() throws IOException {
+		int size = 300;
+		//if (server.getSize()) size = server.getSize(x);
+		byte []b=new byte[size];
+		Socket sr=new Socket("127.0.0.1", 5111);
+		InputStream is=sr.getInputStream();
+		FileOutputStream fr=new FileOutputStream("C:\\Users\\Varun\\eclipse-workspace\\p2p\\src\\p2p\\t.txt");
+		is.read(b,0,b.length);
+		fr.write(b, 0, b.length);
+		fr.close();
+		sr.close();
+	}
+	void sendI() throws IOException {
+		int size = 300;
+		//if (server.getSize()) size = server.getSize(x);
+		byte []b=new byte[size];
+		Socket sr=new Socket("127.0.0.1", 5111);
+		InputStream is=sr.getInputStream();
+		FileOutputStream fr=new FileOutputStream("C:\\Users\\Varun\\eclipse-workspace\\p2p\\src\\p2p\\t.txt");
+		is.read(b,0,b.length);
+		fr.write(b, 0, b.length);
+		fr.close();
+		sr.close();
+	}
+	void sendE() throws IOException {
+		int size = 300;
+		//if (server.getSize()) size = server.getSize(x);
+		byte []b=new byte[size];
+		Socket sr=new Socket("127.0.0.1", 5111);
+		InputStream is=sr.getInputStream();
+		FileOutputStream fr=new FileOutputStream("C:\\Users\\Varun\\eclipse-workspace\\p2p\\src\\p2p\\t.txt");
+		is.read(b,0,b.length);
+		fr.write(b, 0, b.length);
+		fr.close();
+		sr.close();
+	}
+	void sendK() throws IOException {
+		int size = 300;
+		//if (server.getSize()) size = server.getSize(x);
+		byte []b=new byte[size];
+		Socket sr=new Socket("127.0.0.1", 5111);
+		InputStream is=sr.getInputStream();
+		FileOutputStream fr=new FileOutputStream("C:\\Users\\Varun\\eclipse-workspace\\p2p\\src\\p2p\\t.txt");
+		is.read(b,0,b.length);
+		fr.write(b, 0, b.length);
+		fr.close();
+		sr.close();
+	}
+	void sendR() throws IOException {
+		int size = 300;
+		//if (server.getSize()) size = server.getSize(x);
+		byte []b=new byte[size];
+		Socket sr=new Socket("127.0.0.1", 5111);
+		InputStream is=sr.getInputStream();
+		FileOutputStream fr=new FileOutputStream("C:\\Users\\Varun\\eclipse-workspace\\p2p\\src\\p2p\\t.txt");
+		is.read(b,0,b.length);
+		fr.write(b, 0, b.length);
+		fr.close();
+		sr.close();
+	}
+	
+	
 }
